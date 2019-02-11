@@ -1,0 +1,15 @@
+---
+- name: install docker
+  yum:
+    name: docker
+    state: latest
+- name: install docker-py
+  command: pip install docker-py
+- name: add user mod
+  command: usermod -aG docker ec2-user
+- name: add user mod
+  command: usermod -aG docker ec2-user
+- name: Start Docker Service
+  service:
+    name: docker
+    state: restarted

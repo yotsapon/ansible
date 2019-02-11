@@ -1,0 +1,5 @@
+---
+- name: Change timezone to Asia/Bangkok
+  timezone:
+    name: Asia/Bangkok
+  become: yes

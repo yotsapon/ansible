@@ -1,0 +1,46 @@
+---
+# site.yml
+
+- name: Example
+  hosts: "ftp"
+  become: true
+  become_method: sudo
+  become_user: root
+  roles:
+    - amzn-install-docker
+    - amzn-deploy-docker
+#  tasks:
+#    - debug:
+#        msg: "before we run our role"
+#    - name: install docker
+#      yum:
+#        name: docker
+#        state: latest
+#    - name: install docker-py
+#      command: pip install docker-py
+#    - name: add user mod
+#      command: usermod -aG docker ec2-user
+#    - name: add user mod
+#      command: usermod -aG docker ec2-user
+#    - name: Start Docker Service
+#      service:
+#        name: docker
+#        state: restarted
+#    - name: Log into DockerHub
+#      docker_login:
+#        username: yotsapons
+#        password: YsSh12052533
+#    - name: pull an image
+#      docker_image:
+#        name: yotsapons/verse_gapminder:firsttry
+#    - name: Start a container
+#      docker_container:
+#        name: verse_gapminder
+#        image: yotsapons/verse_gapminder:firsttry
+#    - name: Log into private registry and force re-authorization
+#      docker_login:
+#        registry: your.private.registry.io
+#        username: yourself
+#        password: secrets3
+#        reauthorize: yes
+...

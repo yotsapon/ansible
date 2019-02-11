@@ -1,0 +1,12 @@
+---
+- name: Log into DockerHub
+  docker_login:
+    username: yotsapons
+    password: YsSh12052533
+- name: pull an image
+  docker_image:
+    name: yotsapons/verse_gapminder:firsttry
+- name: Start a container
+  docker_container:
+    name: verse_gapminder
+    image: yotsapons/verse_gapminder:firsttry
